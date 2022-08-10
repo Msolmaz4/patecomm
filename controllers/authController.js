@@ -60,7 +60,7 @@ const Login =async ( req,res,next)=> {
         return next(Boom.badRequest(error.details[0].message))
     }
     try{
-        const user = await User.findOne({email= input.email})
+        const user = await User.findOne({email:  input.email})
         if(!user){
             throw Boom.notFound('email yok')
         }
